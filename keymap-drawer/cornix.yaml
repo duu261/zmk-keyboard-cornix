@@ -256,7 +256,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [2, 4]
+- p: [19, 20]
   k: $$mdi:keyboard-esc$$
   l: [BASE]
 - p: [14, 16]
