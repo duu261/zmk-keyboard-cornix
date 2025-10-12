@@ -24,7 +24,7 @@ manifest:
       revision: main
       clone-depth: 1
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: hitsmaxft
       revision: main
       clone-depth: 1
 
