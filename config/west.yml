@@ -8,7 +8,7 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
-    - name: janpfischer
+    - name: duu261
       url-base: https://github.com/duu261
   projects:
     - name: zmk
