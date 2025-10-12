@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: janpfischer
+      url-base: https://github.com/duu261
   projects:
     - name: zmk
       remote: zmkfirmware
