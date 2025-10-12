@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: cornix}
 layers:
-  BASE:
+  Duu Cornix:
   - $$mdi:keyboard-tab$$
   - Q
   - W
@@ -258,10 +258,10 @@ layers:
 combos:
 - p: [19, 20]
   k: $$mdi:keyboard-esc$$
-  l: [BASE]
+  l: [Duu Cornix]
 - p: [14, 16]
   k: $$mdi:keyboard-tab$$
-  l: [BASE]
+  l: [Duu Cornix]
 - p: [21, 19]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
-  l: [BASE]
+  l: [Duu Cornix]
