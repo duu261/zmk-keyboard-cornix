@@ -182,7 +182,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
         };
 
         lower_layer {
@@ -196,11 +196,15 @@
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR    &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                  &kp NUMBER_6    &kp NUMBER_7  &kp NUMBER_8  &kp N9     &kp NUMBER_0  &kp INSERT
-&bt BT_SEL 0  &bt BT_SEL 3    &none         &none         &none         &kp HOME                      &kp LEFT_ARROW  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &none         &kp PG_UP
-&bt BT_SEL 1  &bt BT_SEL 4    &none         &none         &none         &kp END       &trans  &trans  &none           &none         &none         &none      &trans        &kp PG_DN
-&bt BT_SEL 2  &bt BT_CLR_ALL  &none         &trans        &trans        &trans                        &trans          &trans        &trans        &trans     &trans        &trans
+&bt BT_CLR    &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                 &kp NUMBER_6    &kp NUMBER_7  &kp NUMBER_8  &kp N9     &kp NUMBER_0  &kp INSERT
+&bt BT_SEL 0  &bt BT_SEL 3    &none         &none         &none         &kp HOME                                     &kp LEFT_ARROW  &kp DOWN      &kp UP_ARROW  &kp RIGHT  &none         &kp PG_UP
+&bt BT_SEL 1  &bt BT_SEL 4    &none         &none         &none         &kp END       &trans  &kp C_BRIGHTNESS_AUTO  &none           &none         &none         &none      &trans        &kp PG_DN
+&bt BT_SEL 2  &bt BT_CLR_ALL  &none         &trans        &trans        &trans                                       &trans          &trans        &trans        &trans     &trans        &trans
             >;
+
+            sensor-bindings =
+                <&inc_dec_kp 0 0>,
+                <&inc_dec_kp C_BRIGHTNESS_INC C_BRIGHTNESS_DEC>;
         };
 
         raise_layer {
@@ -235,10 +239,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &kp F1  &kp F2     &kp F3       &kp F4      &kp F5                               &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
-&trans  &none   &mkp LCLK  &mkp MCLK    &mkp RCLK   &mkp MB4                             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp F12
-&trans  &none   &none      &bootloader  &sys_reset  &mkp MB5  &trans  &ext_power EP_TOG  &none           &sys_reset      &bootloader   &none            &trans   &trans
-&trans  &trans  &trans     &trans       &trans      &trans                               &trans          &trans          &trans        &trans           &trans   &trans
+&trans  &kp F1  &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
+&trans  &none   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB4                             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp F12
+&trans  &none   &none      &none      &none      &mkp MB5  &trans  &ext_power EP_TOG  &none           &sys_reset      &bootloader   &none            &trans   &trans
+&trans  &trans  &trans     &trans     &trans     &trans                               &trans          &trans          &trans        &trans           &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -247,10 +251,10 @@
         numpad_layer {
             display-name = "NUMPAD";
             bindings = <
-&trans  &none  &none  &none   &none   &none                   &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp KP_MINUS  &kp KP_MULTIPLY  &none
-&none   &none  &none  &none   &none   &none                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_PLUS   &kp KP_DIVIDE    &none
-&none   &none  &none  &none   &none   &none   &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &none         &trans           &none
-&none   &none  &none  &trans  &trans  &trans                  &kp KP_N0        &kp KP_DOT       &kp KP_NUMBER_0  &trans        &trans           &trans
+&trans  &none  &none  &none        &none       &none                   &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp KP_MINUS  &kp KP_MULTIPLY  &none
+&none   &none  &none  &none        &none       &none                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_PLUS   &kp KP_DIVIDE    &none
+&none   &none  &none  &bootloader  &sys_reset  &none   &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &none         &trans           &none
+&none   &none  &none  &trans       &trans      &trans                  &kp KP_N0        &kp KP_DOT       &kp KP_NUMBER_0  &trans        &trans           &trans
             >;
         };
     };
