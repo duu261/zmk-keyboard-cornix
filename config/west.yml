@@ -31,9 +31,9 @@ manifest:
       remote: duu261
       revision: main
       clone-depth: 1
-    - name: snake-module                          # <--- and these
-      remote: joaopedropio                        # <---
-      revision: master   
+    - name: snake-module # <--- and these
+      remote: duu261 # <---
+      revision: master
 
   self:
     path: config
