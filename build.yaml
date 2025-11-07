@@ -15,8 +15,8 @@
 include:
   - board: nice_nano_v2
     shield: cornix_dongle_adapter snake_adapter
-    snippet: studio-rpc-usb-uart nrf52840-nosd
-    artifact-name: cornix_dongle    
+    snippet: nrf52840-nosd
+    artifact-name: cornix_dongle
 
   - board: cornix_left
     #shield: cornix_indicator
@@ -33,4 +33,3 @@ include:
   - board: cornix_right
     shield: settings_reset
     artifact-name: reset
-
