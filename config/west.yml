@@ -2,16 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: hitsmaxft
-      url-base: https://github.com/hitsmaxft
     - name: urob
       url-base: https://github.com/urob
-    - name: englmaxi
-      url-base: https://github.com/englmaxi
+    - name: hitsmaxft
+      url-base: https://github.com/hitsmaxft
     - name: duu261
       url-base: https://github.com/duu261
-    - name: joaopedropio
-      url-base: https://github.com/joaopedropio
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -27,12 +23,8 @@ manifest:
       remote: hitsmaxft
       revision: main
       clone-depth: 1
-    - name: zmk-dongle-display
+    - name: snake-module
       remote: duu261
-      revision: main
-      clone-depth: 1
-    - name: snake-module # <--- and these
-      remote: duu261 # <---
       revision: master
 
   self:
