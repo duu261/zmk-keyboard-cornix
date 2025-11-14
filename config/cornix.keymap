@@ -174,15 +174,15 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB         &kp Q          &kp W         &kp E         &kp R                &kp T                                &kp Y          &kp U                &kp I         &kp O           &kp P             &kp DELETE
-&kp ESC         &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F  &kp G                                &kp H          &hm_shift_r RSHFT J  &hm_r RGUI K  &hm_r RALT L    &hm_r RCTRL SEMI  &kp SQT
-&kp LEFT_SHIFT  &hm_l LGUI Z   &kp X         &kp C         &kp V                &kp B      &kp K_MUTE  &out OUT_TOG  &kp N          &kp M                &kp COMMA     &kp DOT         &kp UP_ARROW      &kp SLASH
-&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &mo 4         &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &mo 3         &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
+&kp TAB         &kp Q          &kp W         &kp E             &kp R                &kp T                                &kp Y          &kp U                &kp I              &kp O           &kp P             &kp DELETE
+&kp ESC         &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D      &hm_shift_l LSHFT F  &kp G                                &kp H          &hm_shift_r RSHFT J  &hm_r RGUI K       &hm_r RALT L    &hm_r RCTRL SEMI  &kp SQT
+&kp LEFT_SHIFT  &hm_l LGUI Z   &kp X         &kp C             &kp V                &kp B      &kp C_MUTE  &out OUT_TOG  &kp N          &kp M                &kp COMMA          &kp DOT         &kp UP_ARROW      &kp SLASH
+&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &lt 4 LEFT_SHIFT  &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &lt 3 RIGHT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_AC_SCROLL_UP C_AC_SCROLL_DOWN>;
+                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
         };
 
         lower_layer {
