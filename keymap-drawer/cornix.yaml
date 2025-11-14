@@ -31,7 +31,7 @@ layers:
   - C
   - V
   - B
-  - MUTE
+  - $$mdi:volume-off$$
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
   - N
   - M
@@ -42,12 +42,12 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-option$$
-  - NUMPAD
+  - {t: '$$mdi:apple-keyboard-shift$$', h: NUMPAD}
   - {t: '$$mdi:keyboard-tab$$', h: LOWER}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', h: RAISE}
-  - FUNC
+  - {t: '$$mdi:apple-keyboard-shift$$', h: FUNC}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
