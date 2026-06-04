@@ -2,7 +2,7 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-      revision: v0.2
+      revision: v0.3.0
     - name: urob
       url-base: https://github.com/urob
     - name: hitsmaxft
