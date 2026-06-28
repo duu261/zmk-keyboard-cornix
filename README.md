@@ -1,4 +1,4 @@
-# ZMK Keyboard for  Cornix
+# ZMK Keyboard for Cornix
 
 Just check the original repo!
 
