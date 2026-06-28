@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: hitsmaxft
-      url-base: https://github.com/hitsmaxft
     - name: duu261
       url-base: https://github.com/duu261
   projects:
@@ -17,10 +15,6 @@ manifest:
         file: app/west.yml
     - name: zmk-helpers
       remote: urob
-      revision: main
-      clone-depth: 1
-    - name: zmk-rgbled-widget
-      remote: hitsmaxft
       revision: main
       clone-depth: 1
     - name: snake-module
