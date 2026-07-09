@@ -167,7 +167,7 @@ layers:
   - F10
   - F11
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:alpha-w-box$$
   - $$mdi:mouse-left-click-outline$$
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click-outline$$
@@ -264,4 +264,7 @@ combos:
   l: [BASE]
 - p: [21, 19]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
+  l: [BASE]
+- p: [3, 2]
+  k: $$mdi:alpha-w-box$$
   l: [BASE]
