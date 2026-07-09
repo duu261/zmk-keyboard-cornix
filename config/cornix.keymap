@@ -32,7 +32,7 @@
 #define THUMBS LH1 LH0 RH0 RH1
 #define KEYS_T LH1 LH0 RH0 RH1
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -142,6 +142,16 @@
             continue-list = <UNDERSCORE MINUS N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
         };
 
+        mo_capsword: mo_capsword {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&caps_word>;
+
+            flavor = "hold-preferred";
+            tapping-term-ms = <HM_TAPPING_TERM>;
+            quick-tap-ms = <200>;
+        };
+
         scroll_v: scroll_v {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -191,7 +201,7 @@
 &kp TAB         &kp Q          &kp W         &kp E             &kp R                &kp T                                &kp Y          &kp U                &kp I              &kp O           &kp P             &kp DELETE
 &kp ESC         &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D      &hm_shift_l LSHFT F  &kp G                                &kp H          &hm_shift_r RSHFT J  &hm_r RGUI K       &hm_r RALT L    &hm_r RCTRL SEMI  &kp SQT
 &kp LEFT_SHIFT  &kp Z          &kp X         &kp C             &kp V                &kp B      &kp C_MUTE  &out OUT_TOG  &kp N          &kp M                &kp COMMA          &kp DOT         &kp UP_ARROW      &kp SLASH
-&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &lt 3 LEFT_SHIFT  &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &lt 4 0            &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
+&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &lt 3 LC(A)       &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &mo_capsword 4 0   &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
             >;
 
             sensor-bindings =
