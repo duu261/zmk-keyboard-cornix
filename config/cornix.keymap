@@ -51,7 +51,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;                // repeat on tap-into-hold
+            quick-tap-ms = <150>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -64,7 +64,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
@@ -83,7 +83,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
@@ -96,7 +96,7 @@
 
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <200>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
 
@@ -134,6 +134,12 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
+
+        caps_word: caps_word {
+            compatible = "zmk,behavior-caps-word";
+            #binding-cells = <0>;
+            continue-list = <UNDERSCORE MINUS N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
+        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -156,6 +162,12 @@
         cb_enter {
             bindings = <&kp RET>;
             key-positions = <21 19>;
+            layers = <0>;
+        };
+
+        cb_caps_word {
+            bindings = <&caps_word>;
+            key-positions = <3 2>;
             layers = <0>;
         };
     };
@@ -240,7 +252,7 @@
 
             bindings = <
 &trans  &kp F1  &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
-&trans  &none   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB4                             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp F12
+&trans  &caps_word   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB4                             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp F12
 &trans  &none   &none      &none      &none      &mkp MB5  &trans  &ext_power EP_TOG  &none           &sys_reset      &bootloader   &none            &trans   &trans
 &trans  &trans  &trans     &trans     &trans     &trans                               &trans          &trans          &trans        &trans           &trans   &trans
             >;
