@@ -31,7 +31,7 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5  // right hand
 #define THUMBS LH1 LH0 RH0 RH1
 #define KEYS_T LH1 LH0 RH0 RH1
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 
 #include <behaviors.dtsi>
@@ -155,7 +155,7 @@
         scroll_v: scroll_v {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
     };
 
@@ -276,7 +276,7 @@
             display-name = "WM";
             bindings = <
 &trans  &kp LG(N1)  &kp LG(N2)    &kp LG(N3)    &kp LG(N4)    &kp LG(N5)               &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &none
-&none   &none  &kp LG(LS(H)) &kp LG(LS(J)) &kp LG(LS(K)) &kp LG(LS(L))            &none       &none       &none       &none       &none       &none
+&none   &none  &none         &none         &none         &none                    &none       &none       &none       &none       &none       &none
 &none   &none  &none         &bootloader   &sys_reset    &none    &trans  &trans  &none       &none       &none       &none       &trans      &none
 &none   &none  &none         &trans        &trans        &trans                   &trans      &trans      &trans      &trans      &trans      &trans
             >;
