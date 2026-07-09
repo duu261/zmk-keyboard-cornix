@@ -32,6 +32,7 @@
 #define THUMBS LH1 LH0 RH0 RH1
 #define KEYS_T LH1 LH0 RH0 RH1
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 15
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -140,6 +141,22 @@
             #binding-cells = <0>;
             continue-list = <UNDERSCORE MINUS N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
         };
+
+        scroll_v: scroll_v {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+    };
+
+    &mmv {
+        time-to-max-speed-ms = <300>;
+        acceleration-exponent = <1>;
+    };
+
+    &msc {
+        time-to-max-speed-ms = <300>;
+        acceleration-exponent = <1>;
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -165,11 +182,6 @@
             layers = <0>;
         };
 
-        cb_caps_word {
-            bindings = <&caps_word>;
-            key-positions = <3 2>;
-            layers = <0>;
-        };
     };
 
     keymap {
@@ -188,13 +200,13 @@
             bindings = <
 &kp TAB         &kp Q          &kp W         &kp E             &kp R                &kp T                                &kp Y          &kp U                &kp I              &kp O           &kp P             &kp DELETE
 &kp ESC         &hm_l LCTRL A  &hm_l LALT S  &hm_l LGUI D      &hm_shift_l LSHFT F  &kp G                                &kp H          &hm_shift_r RSHFT J  &hm_r RGUI K       &hm_r RALT L    &hm_r RCTRL SEMI  &kp SQT
-&kp LEFT_SHIFT  &hm_l LGUI Z   &kp X         &kp C             &kp V                &kp B      &kp C_MUTE  &out OUT_TOG  &kp N          &kp M                &kp COMMA          &kp DOT         &kp UP_ARROW      &kp SLASH
-&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &lt 4 LEFT_SHIFT  &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &lt 3 RIGHT_SHIFT  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
+&kp LEFT_SHIFT  &kp Z          &kp X         &kp C             &kp V                &kp B      &kp C_MUTE  &out OUT_TOG  &kp N          &kp M                &kp COMMA          &kp DOT         &kp UP_ARROW      &kp SLASH
+&kp LCTRL       &kp LEFT_GUI   &kp LEFT_ALT  &lt 3 LEFT_SHIFT  &lt 1 TAB            &kp SPACE                            &kp BACKSPACE  &lt 2 ENTER          &lt 4 0            &kp LEFT_ARROW  &kp DOWN_ARROW    &kp RIGHT
             >;
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+                <&scroll_v>;
         };
 
         lower_layer {
@@ -253,7 +265,7 @@
             bindings = <
 &trans  &kp F1  &kp F2     &kp F3     &kp F4     &kp F5                               &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
 &trans  &caps_word   &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB4                             &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none    &kp F12
-&trans  &none   &none      &none      &none      &mkp MB5  &trans  &ext_power EP_TOG  &none           &sys_reset      &bootloader   &none            &trans   &trans
+&trans  &msc SCRL_LEFT   &msc SCRL_DOWN      &msc SCRL_UP      &msc SCRL_RIGHT      &mkp MB5  &trans  &ext_power EP_TOG  &none           &sys_reset      &bootloader   &none            &trans   &trans
 &trans  &trans  &trans     &trans     &trans     &trans                               &trans          &trans          &trans        &trans           &trans   &trans
             >;
 
@@ -261,12 +273,12 @@
         };
 
         numpad_layer {
-            display-name = "NUMPAD";
+            display-name = "WM";
             bindings = <
-&trans  &none  &none  &none        &none       &none                   &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp KP_MINUS  &kp KP_MULTIPLY  &none
-&none   &none  &none  &none        &none       &none                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_PLUS   &kp KP_DIVIDE    &none
-&none   &none  &none  &bootloader  &sys_reset  &none   &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &none         &trans           &none
-&none   &none  &none  &trans       &trans      &trans                  &kp KP_N0        &kp KP_DOT       &kp KP_NUMBER_0  &trans        &trans           &trans
+&trans  &none  &none         &none         &none         &none                    &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)  &none
+&none   &none  &kp LG(LS(H)) &kp LG(LS(J)) &kp LG(LS(K)) &kp LG(LS(L))            &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LG(N0)  &none
+&none   &none  &none         &bootloader   &sys_reset    &none    &trans  &trans  &none       &none       &none       &none       &trans      &none
+&none   &none  &none         &trans        &trans        &trans                   &trans      &trans      &trans      &trans      &trans      &trans
             >;
         };
     };
